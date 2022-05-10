@@ -1,10 +1,8 @@
-def missing_number(array)
-  true_array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-  array.each do |element|
-    true_array.delete(element) if true_array.include?(element)
-    end
-  true_array
+def missing_num(arr)
+  full_array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+  leftover = full_array - arr
+  leftover
 end
 
-q = [1, 2, 8, 3, 4, 7, 9, 10]
-p missing_number(q)
+q = [1, 2, 8, 3, 6, 4, 7, 9, 10]
+p missing_num(q)
