@@ -1,19 +1,18 @@
 def first_fibb_numbers(int)
-  i = 0
-  j = 0
-  k = 1
-  array = []
-  array << j
-  while i <= int
+  i = 1
+  q = 0
+  array = [0, 1]
+  while i <= int - 2
+    k = array[i]
+    j = array[q]
+    l = k + j
     p array
-    array << k
+    array << l
     i += 1
-    p "This is k #{k}"
-    k += array[i]
-    p "This is k #{k}"
+    q += 1
   end
   array
 end
 
 
-p first_fibb_numbers(6)
+p first_fibb_numbers(10)
