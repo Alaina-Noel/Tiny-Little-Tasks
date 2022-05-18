@@ -25,4 +25,4 @@ puts g2
 g2.username = "blahblahblah"
 puts g2
 
-puts TrueClass.superclass.superclass.superclass
+puts TrueClass.superclass.super

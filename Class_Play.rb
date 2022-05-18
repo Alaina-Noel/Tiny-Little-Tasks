@@ -25,4 +25,9 @@ puts g2
 g2.username = "blahblahblah"
 puts g2
 
-puts TrueClass.superclass.super
+
+
+q = (1..10).to_a.map {|element| element ** 2}
+p q.select {|element| element.even?}
+
+p "This is a sentence" 
