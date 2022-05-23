@@ -1,19 +1,31 @@
+require_relative 'ruby_238'
+
 class Gadget
 
-  attr_writer :password
-  attr_reader :production_number
+  attr_reader :production_number, :apps
   attr_accessor :username
 
   def initialize(username, password)
     @usernamem = username
     @password = password
     @production_number = generate_production_number
+    @apps = []
   end
 
   def to_s
     "Gadget #{@production_number} has the username #{@username}.
     It is made frmo the #{self.class} class and it has the ID
     #{self.object_id}."
+  end
+
+  def install_app(name)
+    app = AppStore.findapp(name)
+    @apps << app unless @apps.include?(app)
+  end
+
+  def delete_app(name)
+    app = apps.find {|installed_app| installed_app.name == name}
+    apps.delete(app) unless app.nil?
   end
 
 private
@@ -29,6 +41,7 @@ private
 
 end
 
-phone = Gadget.new("user", "password")
-p phone.production_number
-p phone.generate_production_number
+
+g = Gadget.new("Alaina", "bestpasswordever")
+p g
+p g.apps
