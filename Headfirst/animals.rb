@@ -1,6 +1,17 @@
 class Bird
 
-attr_accessor :name , :age
+attr_reader :name , :age
+
+
+def name= (name)
+    raise "The name can't be blank!" if name == ""
+    @name = name
+end
+
+def age= (age)
+    raise "Age can't be negative!" if age < 1
+    @age = age
+end
 
   def report_age
     puts "My age is #{@age}. And my name is #{@name}!!!"
@@ -8,35 +19,13 @@ attr_accessor :name , :age
 
 end
 
-class Dog
-  def talk(name)
-    puts "#{name} says Bark bark!"
-  end
-
-  def move(name, destination)
-    puts "#{name} is running to the #{destination}"
-  end
-
-end
-
-class Fish
-  def talk(name)
-    puts "#{name} says Glug glug"
-    name = "Fishyfish"
-  end
-  def move(name, destination)
-    puts "#{name} is swimming to the #{destination}."
-  end
-end
-
-
 
 salvador = Bird.new
 salvador.name = "Salvador"
 salvador.age = 10
 pete = Bird.new
 pete.name = "Pete"
-pete.age = 2
+pete.age = 4
 
-salvador.report_age
+
 pete.report_age
