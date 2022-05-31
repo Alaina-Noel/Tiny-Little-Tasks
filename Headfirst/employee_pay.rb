@@ -22,15 +22,13 @@ class Employee
     end
 
     def print_pay
-        p @name , @salary
-        #puts "Name: #{@name}"
-        #pay_for_period = (@salary/ 365.0) * 14
-        #formatted_pay = format("%.2f", pay_for_period)
-        #puts "Pay This Period: $#{formatted_pay}"
+        puts "Name: #{name}"
+        pay_for_period = (salary/ 365.0) * 14
+        formatted_pay = format("%.2f", pay_for_period)
+        puts "Pay This Period: $#{formatted_pay}"
     end
 
 end
 
-Employee.new("Alaina").print_pay
 ryan = Employee.new("Ryan", 900000)
-p ryan.print_pay
+ryan.print_pay
