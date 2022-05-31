@@ -16,24 +16,21 @@ class Employee
         @salary = salary
     end
 
+    def initialize(name = "No Name Set", salary = 0.0)
+        self.name = name
+        self.salary = salary
+    end
+
     def print_pay
-        puts "Name: #{@name}"
-        pay_for_period = (@salary/ 365.0) * 14
-        formatted_pay = format("%.2f", pay_for_period)
-        puts "Pay This Period: $#{formatted_pay}"
+        p @name , @salary
+        #puts "Name: #{@name}"
+        #pay_for_period = (@salary/ 365.0) * 14
+        #formatted_pay = format("%.2f", pay_for_period)
+        #puts "Pay This Period: $#{formatted_pay}"
     end
 
 end
 
-allie = Employee.new
-allie.name = "Allie"
-allie.salary = 120000
-
-leah = Employee.new
-leah.name = "Leah"
-leah.salary = 130000
-
-alaina = Employee.new
-alaina.name = "Alaina"
-alaina.salary = 200000
-alaina.print_pay
+Employee.new("Alaina").print_pay
+ryan = Employee.new("Ryan", 900000)
+p ryan.print_pay
