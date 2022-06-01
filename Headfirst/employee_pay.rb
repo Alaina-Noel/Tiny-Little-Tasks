@@ -13,6 +13,10 @@ class Employee
         puts "Name: #{self.name}"
     end
 
+    def initialize(name = "No Name Set")
+       self.name = name
+    end
+
 end
 
 class SalariedEmployee < Employee
@@ -27,7 +31,7 @@ class SalariedEmployee < Employee
     end
 
     def initialize(name = "No Name Set", salary = 0.0)
-       self.name = name
+       super(name)
        self.salary = salary
     end
 
@@ -44,6 +48,18 @@ class HourlyEmployee < Employee
 
     attr_reader :hourly_wage, :hours_per_week
 
+    def HourlyEmployee.security_guard(name)
+            HourlyEmployee.new(name, 19.25, 30)
+    end
+
+    def HourlyEmployee.cashier(name)
+        HourlyEmployee.new(name, 12.75, 25)
+    end
+
+    def HourlyEmployee.janitor(name)
+        HourlyEmployee.new(name, 12.00, 20)
+    end
+
     def hourly_wage= hourly_wage
         if hourly_wage > 0
             puts "Your hourly wage is #{@hourly_wage}."
@@ -52,7 +68,7 @@ class HourlyEmployee < Employee
     end
 
     def initialize(name = "No Name Set", hourly_wage = 0.0, hours_per_week = 0.0)
-       self.name = name
+       super(name)
        self.hourly_wage = hourly_wage
        self.hours_per_week = hours_per_week
     end
@@ -85,5 +101,16 @@ susie.hourly_wage = 14.56
 susie.hours_per_week = 20.0
 susie.print_pay
 
-molly = HourlyEmployee.new
+molly = HourlyEmployee.new("Molly", 50000)
 molly.print_pay
+
+angela = HourlyEmployee.security_guard("Angela Martin")
+edwin = HourlyEmployee.cashier("Edwin Burges")
+peter = HourlyEmployee.janitor("Pilot Pete")
+
+puts
+puts
+
+angela.print_pay
+edwin.print_pay
+ivan.print_pay
