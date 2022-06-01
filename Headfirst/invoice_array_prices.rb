@@ -3,10 +3,9 @@ prices = [2.99, 25.00, 9.99]
 def total(array)
     amount = 0
     i = 0
-    while i < array.length
-        amount += array[i]
-        i += 1
-    end
+    array.each do |element|
+        amount += element
+        end
     formatted_price = format("%.2f", amount)
     formatted_price
 end
@@ -26,7 +25,7 @@ def savings_when_reduced_by_third(array)
     savings_total = 0
     i = 0
     while i < array.length
-        b = array[i]/3
+        b = array[i]/3.0
         savings_total += b
         i += 1
     end
