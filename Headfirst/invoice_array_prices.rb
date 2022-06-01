@@ -22,7 +22,18 @@ def refund(array)
     formatted_balance
 end
 
-
+def savings_when_reduced_by_third(array)
+    savings_total = 0
+    i = 0
+    while i < array.length
+        b = array[i]/3
+        savings_total += b
+        i += 1
+    end
+    formatted_savings = format("%.2f", savings_total)
+    formatted_savings
+end
 
 p total(prices)
 p refund(prices)
+p savings_when_reduced_by_third(prices)
