@@ -14,6 +14,7 @@ def find_adjective(string)
     words[index + 1]
 end
 
-adjectives = reviews.map{|review| find_adjective(review)}
+adjectives = reviews.map{|review| adjective = find_adjective(review)
+    " \"#{adjective.capitalize}\""}
 
 puts adjectives
