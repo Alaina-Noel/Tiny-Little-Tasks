@@ -6,11 +6,8 @@ end
 
 relevent_lines = []
 
-lines.each do |line|
-    if line.include?("Truncated")
-        relevent_lines << line
-    end
-end
+relevent_lines = lines.find_all {|line| line.include?("Truncated")}
+
 
 puts lines.length
 puts lines
