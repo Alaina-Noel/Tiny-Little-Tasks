@@ -30,4 +30,11 @@ end
 
 adjectives = relevent_lines.map{|review| adjective = find_adjective(review)
     " \"#{adjective.capitalize}\""}
+
+#This method called map takes a block. First it uses the array called relevent lines
+# and the first time around the first element called "review" is one entire line 10-15 words.
+# that entire string gets put into the find adjective method and that method returns the word "amazing"
+#The word amazing is stored as the variable called adjective. Then it is capitalized, then it is stored in an
+#array called adjectives. The part where it gets stored in an array is built in to the .map method.
+
  puts adjectives
